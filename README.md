@@ -7,38 +7,41 @@
 1. **What is Node.js and what is it used for?**
    - Node.js is a tool that lets you run JavaScript on your server, not just in the browser. It's great for building fast, scalable network applications, like web servers and real-time chat apps.
 
-2. **Main differences between Node.js and traditional web servers like Apache or Nginx:**
+2. **Explain the main differences between Node.js and traditional web server
+environments like Apache or Nginx.**
    - **Node.js**: Uses a single-thread, handles multiple tasks concurrently with non-blocking I/O, written in JavaScript.
    - **Apache/Nginx**: Use multiple threads or processes, each handling a single task, commonly work with languages like PHP, Python, etc.
 
-3. **What is the V8 engine and how does Node.js use it?**
+3. **What is the V8 engine and how does Node.js utilize it?**
    - The V8 engine, made by Google, runs JavaScript fast by turning it into machine code. Node.js uses V8 to run JavaScript on the server side.
 
 4. **Describe the event-driven architecture of Node.js:**
    - Node.js waits for events (like a file read completion) and reacts to them with callbacks, allowing it to handle many operations at once without getting blocked.
 
-5. **Common use cases for Node.js:**
+5. **What are some common use cases for Node.js?**
    - Real-time chat apps, APIs, single-page applications, server-side rendering, IoT apps, data streaming, and proxies.
 
 6. **How does Node.js handle asynchronous operations?**
    - Node.js uses callbacks, Promises, and async/await to manage operations that take time (like reading files or making network requests) without waiting for them to finish.
 
-7. **Purpose of the package.json file in a Node.js project:**
+7. **What is the purpose of the package.json file in a Node.js project?**
    - It keeps track of project details (like name and version) and lists dependencies, making it easy to share and manage the project.
 
-8. **Role of the Node Package Manager (NPM):**
+8. **Explain the role of the Node Package Manager (NPM).**
    - NPM installs and manages packages (libraries or modules) for your Node.js project, helping you add and update dependencies easily.
 
 9. **What is the node_modules folder and why is it important?**
    - This folder contains all the packages your project depends on. Without it, your project won’t run because it won’t find the required libraries.
 
-10. **How to check the version of Node.js and NPM installed on your system:**
+10. **How to check the version of Node.js and NPM installed on your system?**
     - Use `node -v` to check Node.js version and `npm -v` to check NPM version.
 
-11. **How does Node.js handle concurrency and what are the benefits?**
+11. **How does Node.js handle concurrency and what are the benefits of this
+approach?**
     - Node.js uses a single-threaded event loop to handle many tasks at once without creating new threads. This makes it efficient and scalable, especially for I/O-heavy operations.
 
-12. **How does Node.js handle file I/O? Example of reading a file asynchronously:**
+12. **How does Node.js handle file I/O? Provide an example of reading a file
+asynchronously?**
     - Node.js uses the `fs` module for file operations. Example:
 
     ```javascript
@@ -142,10 +145,10 @@
    });
    ```
 
-3. **Explain the purpose of the `http` module in Node.js.**
+2. **Explain the purpose of the `http` module in Node.js.**
    - The `http` module provides functionality for creating HTTP servers and making HTTP requests. It allows Node.js applications to handle client requests and serve responses over the web.
 
-4. **What method do you use to start the HTTP server and make it listen on a specific port?**
+3. **What method do you use to start the HTTP server and make it listen on a specific port?**
    - Use the `listen` method of the HTTP server instance. Example:
      ```javascript
      server.listen(port, () => {
@@ -153,18 +156,18 @@
      });
      ```
 
-5. **How can you send a response to the client in an HTTP server created with Node.js?**
+4. **How can you send a response to the client in an HTTP server created with Node.js?**
    - You can use the `res.writeHead` method to set the status code and headers, and the `res.end` method to send the response body. Example:
      ```javascript
      res.writeHead(200, { 'Content-Type': 'text/plain' });
      res.end('Hello, world!\n');
      ```
 
-6. **Explain the request and response objects in the context of an HTTP server.**
+5. **Explain the request and response objects in the context of an HTTP server.**
    - **Request (`req`)**: Contains information about the client's request, including URL, HTTP method, headers, and any data sent in the request body.
    - **Response (`res`)**: Used to send back the desired HTTP response to the client, including status code, headers, and response body.
 
-7. **How do you handle different HTTP methods (GET, POST, etc.) in a Node.js HTTP server?**
+6. **How do you handle different HTTP methods (GET, POST, etc.) in a Node.js HTTP server?**
    - Check the `req.method` property to determine the HTTP method and handle accordingly. Example:
      ```javascript
      const server = http.createServer((req, res) => {
@@ -176,10 +179,10 @@
      });
      ```
 
-8. **What is middleware in the context of a Node.js HTTP server?**
+7. **What is middleware in the context of a Node.js HTTP server?**
    - Middleware refers to functions that process requests before they reach the final request handler. They can modify the request and response objects, handle errors, and perform tasks like authentication and logging.
 
-9. **How can you serve static files using an HTTP server in Node.js?**
+8. **How can you serve static files using an HTTP server in Node.js?**
    - Use the `fs` module to read the file and serve its contents. Example:
      ```javascript
      const fs = require('fs');
@@ -199,7 +202,7 @@
      });
      ```
 
-10. **Explain how to handle errors in an HTTP server created with Node.js.**
+9. **Explain how to handle errors in an HTTP server created with Node.js.**
    - You can handle errors by checking for error conditions and sending appropriate responses. Example:
      ```javascript
      server.on('error', (err) => {
@@ -216,7 +219,7 @@
      });
      ```
 
-11. **How can you implement routing in a Node.js HTTP server without using external libraries?**
+10. **How can you implement routing in a Node.js HTTP server without using external libraries?**
     - Implement routing by checking the `req.url` and `req.method` properties. Example:
       ```javascript
       const server = http.createServer((req, res) => {
